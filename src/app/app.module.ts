@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SerieListComponent } from './series/serie-list/serie-list.component';  // Importa el componente SerieList
-import { SerieService } from './series/serie.service';
+import { SerieModule } from './serie/serie.module';
+import {provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SerieListComponent,  
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    SerieModule
+
   ],
-  providers: [SerieService],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-

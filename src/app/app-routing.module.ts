@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SerieListComponent } from './series/serie-list/serie-list.component';
 
-const routes: Routes = [
-  { path: '', component: SerieListComponent },
-
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
